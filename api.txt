@@ -1,0 +1,157 @@
+                                                 API and ANNOTATIONS ASSIGNMENT
+                                                 ==============================
+
+1)
+import java.util.*;
+public class joda1 {
+    public static void main(String[] args) {
+        Date dt=new Date();
+        System.out.println("Current date and time is:");
+        System.out.println(dt);
+    }
+}
+OUTPUT-
+======
+Current date and time is:
+Tue Aug 01 01:18:15 IST 2023
+
+
+
+
+
+
+
+
+2)
+import java.time.*;
+public class joda2 {
+public static void main(String[] args) {
+    LocalDate date=LocalDate.now();
+    int mm=date.getMonthValue();
+    int dd=date.getDayOfMonth();
+    int yyyy=date.getYear();
+    String s=""+mm+"/"+dd+"/"+yyyy; 
+    System.out.println("Date in MM/DD/YYYY format is:"+s);
+}    
+}
+
+OUTPUT-
+======
+Date in MM/DD/YYYY format is:8/1/2023
+
+
+
+
+
+
+
+
+3)
+
+STREAMS:
+=======
+*It doesn’t store data, it operates on the source data structure i.e collection.
+*They use functional interfaces like lambda which makes it a good fit for programming language.
+*Java Streams are consumable i.e; to traverse the stream, it needs to be created every time.
+*Streams are iterated internally by just mentioning the operations.
+
+COLLECTIONS:
+===========
+*It stores/holds all the data that the data structure currently has in a particular data structure like Set, List or Map.
+*They don’t use functional interfaces.
+*They are non-consumable i.e; can be traversable multiple times without creating it again.
+*Collections are iterated externally using loops.
+
+Example: Collections
+=======
+import java.io.*;
+import java.util.*;
+class Main {
+public static void main(String[] args)
+{
+List<String> CompanyList = new ArrayList<>();
+CompanyList.add("Google");
+CompanyList.add("Apple");
+CompanyList.add("Microsoft");
+Comparator<String> com = (String o1, String o2) -> o1.compareTo(o2);
+Collections.sort(CompanyList, com);
+for (String name : CompanyList) {
+System.out.println(name);
+}
+}
+}
+
+Output:
+======
+Apple
+Google
+Microsoft
+
+Example: Streams
+=======
+
+import java.io.*;
+import java.util.*;
+class Demo {
+public static void main(String[] args)
+{
+List<String> CompanyList = new ArrayList<>();
+CompanyList.add("Google");
+CompanyList.add("Apple");
+CompanyList.add("Microsoft");
+CompanyList.stream().sorted().forEach(
+System.out::println);
+}
+}
+
+Output:
+======
+Apple
+Google
+Microsoft
+
+
+
+4)
+We can use enum to define a group of named constants.
+Enums are used to represent a collection of related constants that have a common purpose. Each constant in an
+enum is an instance of the enum type, and they are typically defined as public static final fields.
+Here's an example of how to define an enum in Java:
+
+class EnumDemo{
+public enum DayOfWeek {
+MONDAY,
+TUESDAY,
+WEDNESDAY,
+THURSDAY,
+FRIDAY,
+SATURDAY,
+SUNDAY
+}
+public static void main(String args[]){
+for(DayOfWeek d:DayOfWeek.values())
+System.out.println(d);
+}
+}
+
+Here we define an enum called "DayOfWeek" that represents the days of the week. The enum has seven
+constants, each representing a day of the week. The constants are defined in all uppercase letters by convention.
+
+
+
+
+
+
+5. 
+built-in annotations in Java:
+@Override
+@Deprecated
+@SuppressWarnings
+@FunctionalInterface
+@Retention
+@Target
+@Documented
+@Inherited
+These built-in annotations in Java are used to provide additional information to the Java compiler and other
+tools. They help improve code readability, maintainability, and safety by enforcing specific rules and behaviours
+in Java code.
